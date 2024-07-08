@@ -1,7 +1,7 @@
 # Stage 2 Frontend Task: Timbu Cloud Shop
 
 ## Study Material
-- Learn [React](https://www.react.dev) and [Next (Js/Ts)](nextjs.org)
+- Learn [React](http://react.dev/learn) and [Next (Js/Ts)](https://nextjs.org/docs)
 
 ## Task
 
