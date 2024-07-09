@@ -4,9 +4,9 @@ import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
 import ProductCard from "../components/ProductCard";
 import productData from "../data/products.json";
-import downArrow from "../assets/icons/downArrow.svg";
-import leftArrow from "../assets/icons/leftArrow.svg";
-import rightArrow from "../assets/icons/rightArrow.svg";
+import downArrow from "/assets/icons/downArrow.svg";
+import leftArrow from "/assets/icons/leftArrow.svg";
+import rightArrow from "/assets/icons/rightArrow.svg";
 
 const Shop = () => {
   const [product, setProduct] = useState(productData);

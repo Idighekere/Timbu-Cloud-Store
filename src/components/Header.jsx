@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import search from "../assets/icons/search.svg";
-import divider from "../assets/icons/divider.svg";
-import menuCart from "../assets/icons/menu-cart.svg";
-import hamburger from "../assets/icons/hamburger.svg";
-import logo from "../assets/logo.svg";
+import search from "/assets/icons/search.svg";
+import divider from "/assets/icons/divider.svg";
+import menuCart from "/assets/icons/menu-cart.svg";
+import hamburger from "/assets/icons/hamburger.svg";
+import logo from "/assets/logo.svg";
 import Cart from "./Cart";
 const Header = () => {
   const [isCartOpen, setIsCartOpen] = useState(false);

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import productData from "../data/products.json";
 import { Link } from "react-router-dom";
-import deleteIcon from "../assets/icons/delete.svg";
+import deleteIcon from "/assets/icons/delete.svg";
 
 const Cart = ({ closeCart }) => {
   const [product, setProduct] = useState(productData);

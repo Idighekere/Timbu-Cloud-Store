@@ -3,84 +3,84 @@
         "id": 1,
         "name": "Red Bag",
         "price": 30.99,
-        "imageUrl": "/src/assets/products/image 1.png",
+        "imageUrl": "/assets/products/image 1.png",
         "category": "female"
     },
     {
         "id": 2,
         "name": "Brown Tote",
         "price": 35,
-        "imageUrl": "/src/assets/products/image 2.png",
+        "imageUrl": "/assets/products/image 2.png",
         "category": "female"
     },
     {
         "id": 3,
         "name": "Black Leather Cap",
         "price": 59.99,
-        "imageUrl": "/src/assets/products/image 3.png",
+        "imageUrl": "/assets/products/image 3.png",
         "category": "unisex"
     },
     {
         "id": 4,
         "name": "Leather Jacket",
         "price": 150.99,
-        "imageUrl": "/src/assets/products/image 4.png",
+        "imageUrl": "/assets/products/image 4.png",
         "category": "female"
     },
     {
         "id": 5,
         "name": "Glasses",
         "price": 25,
-        "imageUrl": "/src/assets/products/image 5.png",
+        "imageUrl": "/assets/products/image 5.png",
         "category": "accessories"
     },
     {
         "id": 6,
         "name": "Black BackPack",
         "price": 30.99,
-        "imageUrl": "/src/assets/products/image 6.png",
+        "imageUrl": "/assets/products/image 6.png",
         "category": "female"
     },
     {
         "id": 7,
         "name": "White Shirt",
         "price": 60,
-        "imageUrl": "/src/assets/products/image 7.png",
+        "imageUrl": "/assets/products/image 7.png",
         "category": "male"
     },
     {
         "id": 8,
         "name": "Black Bag",
         "price": 50,
-        "imageUrl": "/src/assets/products/image 8.png",
+        "imageUrl": "/assets/products/image 8.png",
         "category": "female"
     },
     {
         "id": 9,
         "name": "Floral Shirt",
         "price": 70,
-        "imageUrl": "/src/assets/products/image 9.png",
+        "imageUrl": "/assets/products/image 9.png",
         "category": "female"
     },
     {
         "id": 10,
         "name": "Red Leather Bag",
         "price": 30,
-        "imageUrl": "/src/assets/products/image 10.png",
+        "imageUrl": "/assets/products/image 10.png",
         "category": "female"
     },
     {
         "id": 11,
         "name": "Glases",
         "price": 35,
-        "imageUrl": "/src/assets/products/image 11.png",
+        "imageUrl": "/assets/products/image 11.png",
         "category": "unisex"
     },
     {
         "id": 12,
         "name": "Black Leather Cap",
         "price": 55.99,
-        "imageUrl": "/src/assets/products/image 12.png",
+        "imageUrl": "/assets/products/image 12.png",
         "category": "unisex"
     }
 ]

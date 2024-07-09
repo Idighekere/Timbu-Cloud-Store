@@ -1,8 +1,8 @@
 import React from "react";
-import logo from "../assets/logo.svg";
-import twitter from "../assets/icons/twitter.svg";
-import instagram from "../assets/icons/instagram.svg";
-import playstore from "../assets/icons/playstore.svg";
+import logo from "/assets/logo.svg";
+import twitter from "/assets/icons/twitter.svg";
+import instagram from "/assets/icons/instagram.svg";
+import playstore from "/assets/icons/playstore.svg";
 import { NavLink } from "react-router-dom";
 
 const Footer = () => {

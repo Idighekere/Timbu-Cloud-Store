@@ -1,5 +1,5 @@
 import React from "react";
-import addToCart from "../assets/icons/addToCart.svg";
+import addToCart from "/assets/icons/addToCart.svg";
 import { formatPrice } from "../utils/formatPrice";
 const ProductCard = ({ product }) => {
   return (
