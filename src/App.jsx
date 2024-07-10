@@ -35,13 +35,13 @@ function App() {
       element: <Checkout />,
     },
     {
-      path: "/shop/product",
+      path: "/shop/product/:id",
       element: <Product />,
     },
   ]);
   return (
     <>
-      <RouterProvider router={router} />
+        <RouterProvider router={router} />
     </>
   );
 }

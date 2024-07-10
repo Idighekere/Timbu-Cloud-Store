@@ -6,18 +6,12 @@ import menuCart from "/assets/icons/menu-cart.svg";
 import hamburger from "/assets/icons/hamburger.svg";
 import logo from "/assets/logo.svg";
 import Cart from "./Cart";
+import { useCart } from "../context/CartContext";
 const Header = () => {
-  const [isCartOpen, setIsCartOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSearch, setIsSearch] = useState(false);
 
-  const openCart = () => {
-    setIsCartOpen((prev) => !prev);
-  };
-
-  const closeCart = () => {
-    setIsCartOpen((prev) => !prev);
-  };
+  const { isCartOpen, openCart, closeCart } = useCart();
   const openMenu = () => {
     setIsMenuOpen((prev) => !prev);
   };
@@ -26,10 +20,9 @@ const Header = () => {
     setIsMenuOpen((prev) => !prev);
   };
   return (
-    <nav className="bg-white h-15 w-screens flex justify-between items-center px-10 py-14 sm:p-16">
+    <nav className="bg-white h-15 w-screens flex justify-between items-center px-10 py-14 sm:p-16 sticky top-0 z-50">
       <div className="z-50">
         <a href="/">
-          {" "}
           <img src={logo} alt="logo" />
         </a>{" "}
       </div>
@@ -80,7 +73,11 @@ const Header = () => {
           <img src={divider} alt="divider" className="sm:hidden block" />
         </span>{" "}
         <span className="" onClick={openMenu}>
-          <img src={hamburger} alt="hamburger menu" className="sm:hidden block" />
+          <img
+            src={hamburger}
+            alt="hamburger menu"
+            className="sm:hidden block"
+          />
         </span>{" "}
       </div>
       {/* Cart */}
