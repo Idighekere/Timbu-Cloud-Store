@@ -48,7 +48,7 @@ const Cart = ({ closeCart }) => {
                 +
               </button>
             </div>
-            <span className="absolute top-1/2 right-5 cursor-pointer group-hover:text-red-600">
+            <span className="absolute top-1/2 right-0 cursor-pointer group-hover:text-red-600">
               <img src={deleteIcon} alt="" />
             </span>
           </div>
