@@ -44,8 +44,8 @@ const ProductDetails = () => {
             protecting you from UV rays and filtering blue-violet light.{" "}
           </p>
         </span>
-        <div className="flex items-center">
-          <span className="bg-[#e5e5e5] flex w-ful gap-2 px-5 py-2 h-auto">
+        <div className="flex items-center w-full sma:flex-row flexa-col">
+          <span className="bg-[#e5e5e5] flex w-ful gap-2  sm:px-5  py-2 h-auto">
             <button
               onClick={() => setQuantity((q) => (q > 1 ? q - 1 : 1))}
               className="px-2 text-[#00000099] text-[17.5px]"
@@ -66,7 +66,7 @@ const ProductDetails = () => {
               onClick={addToCart}
             >
               <img src={add2cart} alt="" />
-              <p> Add to Cart</p>{" "}
+              <p className="whitespace-nowrap"> Add to Cart</p>{" "}
             </button>{" "}
           </div>
         </div>

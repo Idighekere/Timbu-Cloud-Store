@@ -11,7 +11,7 @@ const Faq = () => {
         <div className="text-center font-[200]">
           <h1 className="text-[50px] mt-2 tracking-[.5rem]">FAQ</h1>
           <p className="text-[15px]">
-            <Link to="/">Home</Link> /Faq
+            <Link to="/">Home</Link> / Faq
           </p>
         </div>
       </main>

@@ -42,22 +42,27 @@ const Header = () => {
           <div
             className={`${
               isSearch ? "flex" : "hidden"
-            } duration-500 w-auto relatives`}
+            } duration-500 w-auto absolutse right-1/2 hs-auto top-full mx-auto`}
           >
             {" "}
             <input
+              focus
               type="search"
               name="search"
               id="search"
-              placeholder="Search"
-              className="absolute  right-0 top-full w-0 h-8 bg-[#f4f4f4] p-1 px-2 border-neutral-black"
+              placeholder="Search..."
+              className="absolsute z-50 right-0 top-full w-20 h-8 bg-[#f4f4f4] p-1 px-2 border-neutral-black focus:outline-0"
             />
             <button
-              type="search"
-              className="bg-neutral-black px-2 text-white py-1"
+              type="submit"
+              className="bg-neutral-black px-2 z-50 text-white py-1"
             >
               GO
             </button>
+            <div
+              className="bg-neutral-black w-screen h-[120vh] absolute top-0 right-0 bottom-0 left-0s opacity-30 z-10"
+              onClick={() => setIsSearch(false)}
+            ></div>
           </div>
         </span>
         <span>
