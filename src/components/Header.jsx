@@ -26,9 +26,12 @@ const Header = () => {
     setIsMenuOpen((prev) => !prev);
   };
   return (
-    <nav className="bg-white h-10 w-screens flex justify-between items-center px-10 py-14 sm:p-16">
+    <nav className="bg-white h-15 w-screens flex justify-between items-center px-10 py-14 sm:p-16">
       <div className="z-50">
-        <img src={logo} alt="logo" />
+        <a href="/">
+          {" "}
+          <img src={logo} alt="logo" />
+        </a>{" "}
       </div>
       <div className="uppercase gap-10 hidden sm:flex">
         <NavLink to="/">Home</NavLink>
@@ -74,10 +77,10 @@ const Header = () => {
           </span>
         </span>
         <span>
-          <img src={divider} alt="" className="sm:hidden block" />
+          <img src={divider} alt="divider" className="sm:hidden block" />
         </span>{" "}
         <span className="" onClick={openMenu}>
-          <img src={hamburger} alt="" className="sm:hidden block" />
+          <img src={hamburger} alt="hamburger menu" className="sm:hidden block" />
         </span>{" "}
       </div>
       {/* Cart */}

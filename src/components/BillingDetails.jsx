@@ -61,7 +61,7 @@ const BillingDetails = () => {
           placeholder="EMAIL"
           className={globaStyles.input}
         />
-        <p className="m-6 underline text-center">
+        <p className="m-6 underline text-center text-sm sm:text-base">
           SHIP TO A DIFFERENT ADDRESS?
         </p>
         <hr className="my-5" />
@@ -71,7 +71,7 @@ const BillingDetails = () => {
             placeholder=""
             id="bank"
             name="options"
-            className="h-3 w-3"
+            className="mr-4"
           />
           <label htmlFor="bank"> DIRECT BANK TRANSFER</label>
         </div>
@@ -86,7 +86,7 @@ const BillingDetails = () => {
             placeholder=""
             id="cash"
             name="options"
-            className="h-3 w-3 "
+            className="mr-3 "
           />
           <label htmlFor="cash"> CASH ON DELIVERY</label>
         </div>

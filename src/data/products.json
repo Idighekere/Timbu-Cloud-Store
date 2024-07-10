@@ -64,23 +64,23 @@
     },
     {
         "id": 10,
-        "name": "Red Leather Bag",
-        "price": 30,
+        "name": "Phone Bag",
+        "price": 45,
         "imageUrl": "/assets/products/image 10.png",
         "category": "female"
     },
     {
         "id": 11,
-        "name": "Glases",
-        "price": 35,
+        "name": "Trendy Sneakers",
+        "price": 65,
         "imageUrl": "/assets/products/image 11.png",
         "category": "unisex"
     },
     {
         "id": 12,
-        "name": "Black Leather Cap",
-        "price": 55.99,
+        "name": "Black High Heels",
+        "price": 100,
         "imageUrl": "/assets/products/image 12.png",
-        "category": "unisex"
+        "category": "female"
     }
 ]

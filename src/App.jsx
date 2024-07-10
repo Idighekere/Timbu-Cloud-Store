@@ -6,6 +6,8 @@ import Home from "./pages/Home";
 import Shop from "./pages/Shop";
 import Faq from "./pages/Faq";
 import Checkout from "./pages/Checkout";
+import ProductDetails from "./components/ProductDetails";
+import Product from "./pages/Product";
 // import { Home, Shop, Faq } from '.pages/'
 
 function App() {
@@ -17,6 +19,12 @@ function App() {
     {
       path: "/shop",
       element: <Shop />,
+      // children: [
+      //   {
+      //     path: "/shop/product",
+      //     element: <ProductDetails />,
+      //   },
+      // ],
     },
     {
       path: "/faq",
@@ -25,6 +33,10 @@ function App() {
     {
       path: "/checkout/",
       element: <Checkout />,
+    },
+    {
+      path: "/shop/product",
+      element: <Product />,
     },
   ]);
   return (

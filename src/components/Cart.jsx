@@ -5,7 +5,7 @@ import deleteIcon from "/assets/icons/delete.svg";
 
 const Cart = ({ closeCart }) => {
   const [product, setProduct] = useState(productData);
-  const [quantity, setQuantity] = useState(1);
+  const [quantity, setQuantity] = useState(4);
   return (
     <div className="absolute right-0 top-0 bg-white h-screen z-50 w-5/6 sm:w-[500px] px-10 py-12">
       <div className="flex justify-between w-full mb-10">
@@ -18,13 +18,15 @@ const Cart = ({ closeCart }) => {
           Close
         </span>
       </div>
-      <div>
-        <div className="flex relative">
-          <img
-            src={product[0].imageUrl}
-            alt=""
-            className="max-w-[90px] w-[89psx] h-sauto object-contain"
-          />
+      <div className="">
+        <div className="flex relative gap-3">
+          <div>
+            <img
+              src={product[0].imageUrl}
+              alt={product[0].name}
+              className="max-w-[90px] w-[89psx] h-sauto object-contain"
+            />
+          </div>
           <div>
             <h3 className="font-[300] text-[20px]">{product[0].name}</h3>
             <p className="font-[400] text-[#00000099] text-bases">

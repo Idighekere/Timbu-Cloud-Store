@@ -8,7 +8,7 @@ const YourOrder = () => {
       <p className="font-[600]">$39.00</p>
       <hr className="my-10" />
       <div className="w-full">
-        <div className="flex gap-10 w-full justify-between">
+        <div className="flex gap-10 w-fuvll justify-sbetween">
           <p className="font-[400] text-[#00000099]">Subtotal:</p>
           <p className="font-[400]">$156.00</p>
         </div>
@@ -18,8 +18,8 @@ const YourOrder = () => {
             FREE SHIPPING
           </p>
         </div>
-        <div className="flex gap-10 w-full justify-items-center">
-          <p className="font-[400] text-[#00000099]">Total:</p>
+        <div className="flex gap-10 w-full ">
+          <p className="font-[400] text-[#00000099] mr-6">Total:</p>
           <p>$156.00</p>
         </div>
       </div>
