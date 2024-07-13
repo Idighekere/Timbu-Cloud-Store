@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
+
 import Header from "./components/Header";
 import Home from "./pages/Home";
 import Shop from "./pages/Shop";
@@ -35,13 +36,13 @@ function App() {
       element: <Checkout />,
     },
     {
-      path: "/shop/product/:id",
+      path: "/shop/product/:unique_id",
       element: <Product />,
     },
   ]);
   return (
     <>
-        <RouterProvider router={router} />
+      <RouterProvider router={router} />
     </>
   );
 }

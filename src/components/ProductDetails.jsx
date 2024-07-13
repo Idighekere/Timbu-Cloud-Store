@@ -8,18 +8,16 @@ import products from "../data/products.json";
 import { useCart } from "../context/CartContext";
 
 const ProductDetails = () => {
-  const [quantity, setQuantity] = useState(1);
+  const { openCart, closeCart, addToCart } = useCart();
 
-  const { id } = useParams();
-  const product = products.find((p) => p.id == id);
-
+  const { unique_id } = useParams();
+  const product = products.find((p) => p.unique_id == unique_id);
+  console.log(product)
   // const location = useLocation();
   // const { product } = location.state;
   if (!product) {
     return <div className="text-center ">Product not found</div>;
   }
-  const { openCart } = useCart();
-  const addToCart = () => openCart();
   return (
     <main className="bg-white rounded-lg w-full flex gap-10 sm:gap-20 p-10 flex-col md:flex-row">
       <div className="flex justify-center  w-full md:w-1/2 items-center p-0">
@@ -52,9 +50,9 @@ const ProductDetails = () => {
             >
               -
             </button>
-            <p>{quantity}</p>
+            <p>{product.quantity}</p>
             <button
-              onClick={() => setQuantity((q) => q + 1)}
+              onClick={() => addToCart(product)}
               className="px-2 text-[#00000099] text-[17.5px]"
             >
               +
@@ -63,7 +61,7 @@ const ProductDetails = () => {
           <div>
             <button
               className="bg-white text-black px-5 py-2 w-xfull h-auto  flex items-center gap-2 justify-center  hover:bg-gray-100 border border-[rgba(0,_0,_0,0.2)]"
-              onClick={addToCart}
+              onClick={() => addToCart(product)}
             >
               <img src={add2cart} alt="" />
               <p className="whitespace-nowrap"> Add to Cart</p>{" "}

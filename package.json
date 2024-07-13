@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "proxy": "https://api.timbu.cloud",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -10,6 +11,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "axios": "^1.7.2",
+    "dotenv": "^16.4.5",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.24.1"

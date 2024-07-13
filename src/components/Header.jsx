@@ -11,7 +11,7 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSearch, setIsSearch] = useState(false);
 
-  const { isCartOpen, openCart, closeCart } = useCart();
+  const { isCartOpen, openCart, closeCart, cartItems } = useCart();
   const openMenu = () => {
     setIsMenuOpen((prev) => !prev);
   };
@@ -40,9 +40,8 @@ const Header = () => {
             onClick={() => setIsSearch((prev) => !prev)}
           />
           <div
-            className={`${
-              isSearch ? "flex" : "hidden"
-            } duration-500 w-auto absolutse right-1/2 hs-auto top-full mx-auto`}
+            className={`${isSearch ? "flex" : "hidden"
+              } duration-500 w-auto absolutse right-1/2 hs-auto top-full mx-auto`}
           >
             {" "}
             <input
@@ -71,7 +70,7 @@ const Header = () => {
         <span onClick={openCart} className="cursor-pointer relative">
           <img src={menuCart} alt="" />
           <span className="bg-red-600 text-white w-3 h-[12px] absolute bottom-0 right-[-6px] rounded-full text-[10px] text-center flex justify-center items-center p-[6px]">
-            1
+            {cartItems.length}
           </span>
         </span>
         <span>
@@ -99,9 +98,8 @@ const Header = () => {
       </div>
       {isMenuOpen && (
         <div
-          className={`sm:hidden block  absolute top-0 bg-white w-4/5 h-screen right-0 left-0 transition-transform  duration-500 z-40 ${
-            isMenuOpen ? "translate-x-0" : "translate-x-full"
-          }`}
+          className={`sm:hidden block  absolute top-0 bg-white w-4/5 h-screen right-0 left-0 transition-transform  duration-500 z-40 ${isMenuOpen ? "translate-x-0" : "translate-x-full"
+            }`}
         >
           <div className="uppercase gap-10 flex-col p-10 mt-20  flex text-center">
             <NavLink to="/">Home</NavLink>
