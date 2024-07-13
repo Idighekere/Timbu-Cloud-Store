@@ -9,7 +9,7 @@ import Footer from "../components/Footer";
 import { useCart } from "../context/CartContext";
 
 const ProductDetails = () => {
-    const { unique_id } = useParams();
+    const { id } = useParams();
     const { addToCart, removeFromCart } = useCart();
     const [product, setProduct] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
