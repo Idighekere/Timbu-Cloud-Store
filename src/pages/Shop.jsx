@@ -24,6 +24,7 @@ const fetchProducts = async (page) => {
       size: 8,
       Appid: APP_ID,
       Apikey: API_KEY,
+      currency_code: CAD
     },
   });
   return response.data;
