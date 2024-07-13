@@ -23,7 +23,7 @@ const ProductDetails = () => {
                 const API_KEY = import.meta.env.VITE_API_KEY;
                 const APP_ID = import.meta.env.VITE_APP_ID;
                 const ORG_ID = import.meta.env.VITE_ORG_ID;
-                const response = await axios.get(`https://timbu-get-single-product.reavdev.workers.dev/${unique_id}`, {
+                const response = await axios.get(`https://timbu-get-single-product.reavdev.workers.dev/${id}`, {
                     params: {
                         organization_id: ORG_ID,
                         Appid: APP_ID,
