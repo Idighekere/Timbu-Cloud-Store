@@ -36,7 +36,7 @@ function App() {
       element: <Checkout />,
     },
     {
-      path: "/shop/product/:unique_id",
+      path: "/shop/product/:id",
       element: <Product />,
     },
   ]);
