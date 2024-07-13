@@ -71,7 +71,7 @@ const ProductDetails = () => {
                     <div className="flex items-center w-full sma:flex-row flexa-col">
                         <span className="bg-[#e5e5e5] flex w-ful gap-2 sm:px-5 py-2 h-auto">
                             <button
-                                onClick={() => removeFromCart(product))}
+                                onClick={() => removeFromCart(product)}
                                 className="px-2 text-[#00000099] text-[17.5px]"
                             >
                                 -
