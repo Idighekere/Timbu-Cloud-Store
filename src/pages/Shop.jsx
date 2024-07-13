@@ -60,7 +60,23 @@ const Shop = () => {
   }, [page]);
 
   // if (isLoading) return <div>loading...</div>;
-  if (isError) return <div>Error fetching products</div>;
+  if (isError) return <div><div className="bg-primary">
+      {" "}
+      <Header />
+      <main className="p-10">
+        <div className="text-center font-[200]">
+          <h1 className="text-[50px] mt-2 tracking-[.5rem]">SHOP</h1>
+          <p className="text-[15px]">
+            <Link to="/">Home</Link> / Shop
+          </p></div>
+        
+    Error fetching products
+      
+      
+        
+      </main>
+      <Footer />
+    </div></div>;
   if (isEmpty) return <div>No products found</div>;
 
   // const { product } = useCart()
