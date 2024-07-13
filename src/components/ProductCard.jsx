@@ -21,7 +21,7 @@ const ProductCard = ({ product }) => {
           //   pathname: `/shop/product/${product.id}`,
           //   state: { product },
           // }}
-          to={`/shop/product/${product.unique_id}`}
+          to={`/shop/product/${product.id}`}
         >
           <img
             src={`https://api.timbu.cloud/images/${product.photos[0].url}`}
