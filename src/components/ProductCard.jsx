@@ -21,7 +21,7 @@ const ProductCard = ({ product }) => {
           //   pathname: `/shop/product/${product.id}`,
           //   state: { product },
           // }}
-          to={`/shop/product/${product.unique_id}`}
+          to={`/shop/product/${product.id}`}
         >
           <img
             src={`https://api.timbu.cloud/images/${product.photos[0].url}`}
@@ -34,7 +34,7 @@ const ProductCard = ({ product }) => {
       <p>${
         // product?.current_price[0]?.USD[0]
         // product?.current_price[0]?.USD[0]
-        () => formatPrice(product?.current_price[0]?.CAD[0])
+        () => formatPrice(product.current_price[0].CAD[0])
       }</p>
       <button
         className="bg-neutral-black text-white rounded-lg px-5 py-5 w-full h-[33.78px] flex items-center gap-2 justify-center self-center place-self-center mt-5 hover:bg-gray-950"
