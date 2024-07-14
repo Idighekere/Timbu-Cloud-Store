@@ -35,8 +35,7 @@ const Cart = ({ closeCart }) => {
               <h3 className="font-[300] text-[20px] p-0">{product.name}</h3>
               <p className="font-[400] text-[#00000099] text-bases">
                 <span className="text-[#000000]">{product.quantity} x </span>
-                ${() => formatPrice(product?.current_price[0]?.CAD[0])
-                }
+                ₦{product?.current_price[0].NGN[0]}
               </p>
               <div className="bg-[#e5e5e5] flex gap-2 p-1 w-[6rem] justify-between">
                 <button
@@ -97,7 +96,7 @@ const Cart = ({ closeCart }) => {
         <hr className={`
           mt-6 ${cartItems.length === 0 ? "hidden" : "block"}`} />
         <h3 className={`text-center my-10 font-[500] ${cartItems.length === 0 ? "hidden" : "block"}`}>
-          < span className="font-[300] mr-1">Subtotal: </span>${() => formatPrice(getTotal())}
+          < span className="font-[300] mr-1">Subtotal: </span>₦{getTotal()}
         </h3>{" "}
         <div className={`flex flex-col items-centers gap-3 ${cartItems.length === 0 ? "hidden" : ""}`}>
           <Link className="w-full" onClick={clearCart}>
