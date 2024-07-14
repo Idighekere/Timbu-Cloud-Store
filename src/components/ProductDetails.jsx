@@ -99,20 +99,4 @@ const ProductDetails = () => {
   );
 };
 
-export default ProductDetails                            <button
-                                className="bg-white text-black px-5 py-2 w-xfull h-auto flex items-center gap-2 justify-center hover:bg-gray-100 border border-[rgba(0,_0,_0,0.2)]"
-                                onClick={() => addToCart(product)}
-                            >
-                                <img src={add2cart} alt="" />
-                                <p className="whitespace-nowrap"> Add to Cart</p>{" "}
-                            </button>{" "}
-                        </div>
-                    </div>
-                </div>
-            </main>
-            <Footer />
-        </div>
-    );
-};
-
-export default ProductDetails;
+export default ProductDetails   
