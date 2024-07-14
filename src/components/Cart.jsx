@@ -96,7 +96,7 @@ const Cart = ({ closeCart }) => {
         <hr className={`
           mt-6 ${cartItems.length === 0 ? "hidden" : "block"}`} />
         <h3 className={`text-center my-10 font-[500] ${cartItems.length === 0 ? "hidden" : "block"}`}>
-          < span className="font-[300] mr-1">Subtotal: </span>₦{() => formatPrice(getTotal())}
+          < span className="font-[300] mr-1">Subtotal: </span>₦{getTotal()}
         </h3>{" "}
         <div className={`flex flex-col items-centers gap-3 ${cartItems.length === 0 ? "hidden" : ""}`}>
           <Link className="w-full" onClick={clearCart}>
