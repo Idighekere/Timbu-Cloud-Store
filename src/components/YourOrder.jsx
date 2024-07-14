@@ -24,12 +24,12 @@ const YourOrder = ({ cartItems, getTotal }) => {
             <div className="flex gap-10 w-ful justify-start items-center">
               <p className="font-[400] text-[#00000099]">Shipping:</p>
               <p className="text-[12px] font-[300] whitespace-nowrap">
-                {total >= 200000.00 ? "FREE SHIPPING" : "₦2.00"}
+                {total >= 200000.00 ? "FREE SHIPPING" : "₦2500"}
               </p>
             </div>
             <div className="flex gap-10 w-full ">
               <p className="font-[400] text-[#00000099] mr-6">Total:</p>
-              <p>₦{total >= 200000.00 ? total : total * 2}</p>
+              <p>₦{total >= 200000.00 ? total : total + 2500}</p>
             </div>
           </div>
         </div>}
