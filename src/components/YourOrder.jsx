@@ -19,17 +19,17 @@ const YourOrder = ({ cartItems, getTotal }) => {
           <div className="w-full">
             <div className="flex gap-10 w-fuvll justify-sbetween">
               <p className="font-[400] text-[#00000099]">Subtotal:</p>
-              <p className="font-[400]">${()=>formatPrice(getTotal())}</p>
+              <p className="font-[400]">₦{()=>formatPrice(getTotal())}</p>
             </div>
             <div className="flex gap-10 w-ful justify-start items-center">
               <p className="font-[400] text-[#00000099]">Shipping:</p>
               <p className="text-[12px] font-[300] whitespace-nowrap">
-                {total >= 1000.00 ? "FREE SHIPPING" : "$2.00"}
+                {total >= 1000.00 ? "FREE SHIPPING" : "₦2.00"}
               </p>
             </div>
             <div className="flex gap-10 w-full ">
               <p className="font-[400] text-[#00000099] mr-6">Total:</p>
-              <p>{() => formatPrice(total >= 1000.00 ? total : total * 2)}</p>
+              <p>₦{() => formatPrice(total >= 1000.00 ? total : total * 2)}</p>
             </div>
           </div>
         </div>}
