@@ -13,7 +13,7 @@ const YourOrder = ({ cartItems, getTotal }) => {
 
           {cartItems.map(item => (
             <div><p>{item.name} x{item.quantity}</p>
-              <p className="font-[600]">₦{()=>formatPrice(item.current_price[0].NGN[0] *the item.quantity)}</p>
+              <p className="font-[600]">₦{()=>formatPrice(item.current_price[0].NGN[0] *item.quantity)}</p>
             </div>
           ))}<hr className="my-10" />
           <div className="w-full">
