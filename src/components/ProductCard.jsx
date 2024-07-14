@@ -34,7 +34,7 @@ const ProductCard = ({ product }) => {
       <p>₦{
         // product?.current_price[0]?.USD[0]
         // product?.current_price[0]?.USD[0]
-       product.current_price[0]["NGN"][0]
+       product?.current_price[0]["NGN"][0]
       }</p>
       <button
         className="bg-neutral-black text-white rounded-lg px-5 py-5 w-full h-[33.78px] flex items-center gap-2 justify-center self-center place-self-center mt-5 hover:bg-gray-950"
