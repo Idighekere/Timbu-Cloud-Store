@@ -13,13 +13,13 @@ const YourOrder = ({ cartItems, getTotal }) => {
 
           {cartItems.map(item => (
             <div><p>{item.name} x{item.quantity}</p>
-              <p className="font-[600]">${()=>formatPrice(item.price * item.quantity)}</p>
+              <p className="font-[600]">${() => formatPrice(item.product?.current_price[0]?.NGN[0] * item.quantity)}</p>
             </div>
           ))}<hr className="my-10" />
           <div className="w-full">
             <div className="flex gap-10 w-fuvll justify-sbetween">
               <p className="font-[400] text-[#00000099]">Subtotal:</p>
-              <p className="font-[400]">${()=>formatPrice(getTotal())}</p>
+              <p className="font-[400]">${() => formatPrice(getTotal())}</p>
             </div>
             <div className="flex gap-10 w-ful justify-start items-center">
               <p className="font-[400] text-[#00000099]">Shipping:</p>
