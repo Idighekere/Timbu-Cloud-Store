@@ -56,7 +56,7 @@ const ProductDetails = () => {
       </div>
       <div className="gap-5 sm:gap-8 flex-col flex">
         <h2 className="font-[275] text-[64px] text-[rgba(0,_0,_0,_0.3)]">
-          ₦{product?.current_price[0].NGN[0]}
+          ₦{product?.current_price[0]?.NGN[0]}
         </h2>
         <span className="flex gap-3 items-center">
           <img src={love} alt="love icon" className="cursor-pointer" />{" "}
@@ -65,8 +65,8 @@ const ProductDetails = () => {
         </span>
         <span>
           <p>
-          {/*product.description}*/}
-              This is a description 
+          {product.description}
+              
           </p>
         </span>
         <div className="flex items-center w-full sma:flex-row flexa-col">
