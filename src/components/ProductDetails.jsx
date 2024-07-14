@@ -65,7 +65,8 @@ const ProductDetails = () => {
         </span>
         <span>
           <p>
-            {product.description}
+          {/*product.description}*/}
+              This is a description 
           </p>
         </span>
         <div className="flex items-center w-full sma:flex-row flexa-col">
