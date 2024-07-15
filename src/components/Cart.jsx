@@ -6,7 +6,7 @@ import { useCart } from "../context/CartContext";
 import { formatPrice } from "../utils/formatPrice";
 const Cart = ({ closeCart }) => {
   const { addToCart, removeItem, clearCart, cartItems, getTotal, removeFromCart } = useCart()
-  console.log(cartItems)
+  // //console.log(cartItems)
   // const [product, setProduct] = useState(productData);
   // const [quantity, setQuantity] = useState(4);
   return (
@@ -22,20 +22,21 @@ const Cart = ({ closeCart }) => {
         </span>
       </div>
       <div className="flex flex-col gap-3">
-        {cartItems.length === 0 ? (<p className="text-center">Your cart is empty</p>) : (<div className="flex flex-col gap-3">
-          {cartItems.map((product) => (<div className="flex relative gap-6">
-            <div>
+        {cartItems.length === 0 ? (<p className="text-center">Your cart is empty</p>) : (<div className="flex flex-col gap-4">
+          {cartItems.map((product) => (<div className="flex relative gap-3 md:gap-6">
+            <div className="flex items-center"><Link to={`/shop/product/${product.id}`}>
               <img
                 src={`https://api.timbu.cloud/images/${product.photos[0].url}`}
                 alt={product.name}
                 className="max-w-[90px] w-[89psx] h-sauto object-contain"
-              />
+              /></Link>
             </div>
             <div>
-              <h3 className="font-[300] text-[20px] p-0">{product.name}</h3>
+              <h3 className="font-[300] text-[18px] sm:text-[20px] pr-3 sm:pr-4 pt-0 mt-0">{product.name}</h3>
               <p className="font-[400] text-[#00000099] text-bases">
                 <span className="text-[#000000]">{product.quantity} x </span>
-                ₦{product?.current_price[0].NGN[0]}
+                ₦{product?.current_price[0]?.NGN[0]
+                }
               </p>
               <div className="bg-[#e5e5e5] flex gap-2 p-1 w-[6rem] justify-between">
                 <button
@@ -99,18 +100,18 @@ const Cart = ({ closeCart }) => {
           < span className="font-[300] mr-1">Subtotal: </span>₦{getTotal()}
         </h3>{" "}
         <div className={`flex flex-col items-centers gap-3 ${cartItems.length === 0 ? "hidden" : ""}`}>
-          <Link className="w-full" onClick={clearCart}>
+          <div className="w-full" onClick={clearCart}>
             <button className="bg-[#d9d9d9] py-5 sm:py-[25px] sm:px-32 w-full">
               EMPTY CART
             </button>
-          </Link>
-          <Link to="/checkout/" className="pys-5 w-full sm:py-[s5px] sm:pxs-32">
+          </div>
+          <a href="/checkout/" className="pys-5 w-full sm:py-[s5px] sm:pxs-32">
             {" "}
             <button className="bg-black w-full text-white py-5 sm:py-[25px] sm:px-32">
               {" "}
               CHECKOUT
             </button>
-          </Link>{" "}
+          </a>{" "}
         </div>
       </div>
     </div >

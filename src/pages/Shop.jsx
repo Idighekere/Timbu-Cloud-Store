@@ -30,7 +30,7 @@ const fetchProducts = async (page) => {
   return response.data;
 };
 
-// console.log(response.data)
+// //console.log(response.data)
 const Shop = () => {
 
   const [categoryAll, setCategoryAll] = useState(false);
@@ -61,22 +61,22 @@ const Shop = () => {
 
   // if (isLoading) return <div>loading...</div>;
   if (isError) return <div><div className="bg-primary">
-      {" "}
-      <Header />
-      <main className="p-10">
-        <div className="text-center font-[200]">
-          <h1 className="text-[50px] mt-2 tracking-[.5rem]">SHOP</h1>
-          <p className="text-[15px]">
-            <Link to="/">Home</Link> / Shop
-          </p></div>
-        
-    Error fetching products
-      
-      
-        
-      </main>
-      <Footer />
-    </div></div>;
+    {" "}
+    <Header />
+    <main className="p-10">
+      <div className="text-center font-[200]">
+        <h1 className="text-[50px] mt-2 tracking-[.5rem]">SHOP</h1>
+        <p className="text-[15px]">
+          <Link to="/">Home</Link> / Shop
+        </p></div>
+
+      Error fetching products
+
+
+
+    </main>
+    <Footer />
+  </div></div>;
   if (isEmpty) return <div>No products found</div>;
 
   // const { product } = useCart()
@@ -99,12 +99,12 @@ const Shop = () => {
   //   if (error) return <div>{error}</div>
 
   // const product = data.items
-  // console.log(data.items)
+  //console.log(products)
 
   const filteredProducts =
     selectedCategory === "all"
       ? products
-      : products.filter((p) => p.category === selectedCategory);
+      : products.filter((p) => p.categories[0].name === selectedCategory);
   const toggleCategory = () => {
     setCategoryAll((prev) => !prev);
   };
@@ -135,8 +135,8 @@ const Shop = () => {
               ACCESSORIES
             </button>
             <button
-              onClick={() => handleCategoryClick("male")}
-              className={` cursor - pointer ${selectedCategory === "male" ? "text-black" : ""
+              onClick={() => handleCategoryClick("males")}
+              className={` cursor - pointer ${selectedCategory === "males" ? "text-black" : ""
                 } `}
             >
               MALE
@@ -145,8 +145,8 @@ const Shop = () => {
               <>
                 {" "}
                 <button
-                  onClick={() => handleCategoryClick("female")}
-                  className={` cursor - pointer ${selectedCategory === "female" ? "text-black" : ""
+                  onClick={() => handleCategoryClick("females")}
+                  className={` cursor - pointer ${selectedCategory === "females" ? "text-black" : ""
                     } `}
                 >
                   FEMALE
@@ -194,7 +194,7 @@ const Shop = () => {
           className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6
  items-center justify-center w-full  gap-x-10s mt-7 "
         >
-          {products.map((product) => {
+          {filteredProducts.map((product) => {
             return <ProductCard product={product} key={product.id} />;
           })}
         </div>)}

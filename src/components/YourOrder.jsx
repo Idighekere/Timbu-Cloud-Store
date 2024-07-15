@@ -3,7 +3,7 @@ import { formatPrice } from "../utils/formatPrice";
 
 const YourOrder = ({ cartItems, getTotal }) => {
   const total = getTotal()
-  console.log(total)
+  // //console.log(total)
   return (
     <div className="bg-white items-start sm:w-[40%] py-12 px-10 rounded-lg">
       <h1 className="font-[500] text-2xl tracking-[.2em] mb-8">YOUR ORDER</h1>
@@ -13,7 +13,7 @@ const YourOrder = ({ cartItems, getTotal }) => {
 
           {cartItems.map(item => (
             <div><p>{item.name} x{item.quantity}</p>
-              <p className="font-[600]">${() => formatPrice(item.product?.current_price[0]?.NGN[0] * item.quantity)}</p>
+              <p className="font-[600]">₦{item?.current_price[0]?.NGN[0] * item.quantity}</p>
             </div>
           ))}<hr className="my-10" />
           <div className="w-full">

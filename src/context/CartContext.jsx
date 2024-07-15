@@ -1,4 +1,4 @@
-import React, { createContext, useState, useContext } from "react";
+import React, { createContext, useState, useContext, useEffect } from "react";
 import productData from "../data/products.json";
 
 
@@ -8,9 +8,27 @@ export const useCart = () => useContext(CartContext)
 
 
 export const CartProvider = ({ children }) => {
+    const [cartItems, setCartItems] = useState(
+
+        localStorage.getItem("cartItems") ? JSON.parse(localStorage.getItem("cartItems")) :
+            [])
+
+    // Update local storage whenever cartItems change
+
+    useEffect(() => {
+
+        localStorage.setItem("cartItems", JSON.stringify(cartItems))
+    }, [cartItems])
+    // Load cart items from local storage on component mount
+
+    useEffect(() => {
+        const storedData = localStorage.getItem("cartItems")
+        if (storedData) {
+            setCartItems(JSON.parse(storedData))
+        }
+    }, [])
 
     const [isCartOpen, setIsCartOpen] = useState(false)
-    const [cartItems, setCartItems] = useState([])
 
     const openCart = () => {
         setIsCartOpen(true);
@@ -53,7 +71,7 @@ export const CartProvider = ({ children }) => {
 
     const getTotal = () => {
 
-        return cartItems.reduce((total, item) => total + item.quantity * item?.current_price[0].NGN[0], 0);
+        return cartItems.reduce((total, item) => total + item.quantity * item?.current_price[0]?.NGN[0], 0);
     }
 
     const [product, setProduct] = useState(productData);

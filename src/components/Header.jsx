@@ -45,7 +45,6 @@ const Header = () => {
           >
             {" "}
             <input
-              focus
               type="search"
               name="search"
               id="search"

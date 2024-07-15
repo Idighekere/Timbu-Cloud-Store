@@ -10,7 +10,7 @@ import { useCart } from "../context/CartContext";
 
 const ProductDetails = () => {
   const { id } = useParams();
-  const { addToCart, removeFromCart } = useCart();
+  const { addToCart, removeFromCart, cartItems } = useCart();
   const [product, setProduct] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
@@ -45,6 +45,7 @@ const ProductDetails = () => {
   if (isError) return <div>Error fetching product</div>;
   if (!product) return <div className="text-center">Product not found</div>;
 
+  //console.log(product)
   return (
     <main className="bg-white rounded-lg w-full flex gap-10 sm:gap-20 p-10 flex-col md:flex-row">
       <div className="flex justify-center  w-full md:w-1/2 items-center p-0">
@@ -56,7 +57,7 @@ const ProductDetails = () => {
       </div>
       <div className="gap-5 sm:gap-8 flex-col flex">
         <h2 className="font-[275] text-[64px] text-[rgba(0,_0,_0,_0.3)]">
-          ₦{product?.current_price[0]?.NGN[0]}{console.log(product?.current_price[0].NGN[0])}
+          ₦{product?.current_price}
         </h2>
         <span className="flex gap-3 items-center">
           <img src={love} alt="love icon" className="cursor-pointer" />{" "}
@@ -77,8 +78,7 @@ const ProductDetails = () => {
             >
               -
             </button>
-            <p>{product.quantity}</p>
-            <button
+            {1}            <button
               onClick={() => addToCart(product)}
               className="px-2 text-[#00000099] text-[17.5px]"
             >
