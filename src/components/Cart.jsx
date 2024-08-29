@@ -23,10 +23,11 @@ const Cart = ({ closeCart }) => {
       </div>
       <div className="flex flex-col gap-3">
         {cartItems.length === 0 ? (<p className="text-center">Your cart is empty</p>) : (<div className="flex flex-col gap-4">
-          {cartItems.map((product) => (<div className="flex relative gap-3 md:gap-6">
+          {cartItems.map((product) => (<div className="flex relative gap-3 md:gap-6" key={product.id}>
             <div className="flex items-center"><Link to={`/shop/product/${product.id}`}>
               <img
-                src={`https://api.timbu.cloud/images/${product.photos[0].url}`}
+                src={product.imageUrl}
+                // src={`https://api.timbu.cloud/images/${product.photos[0].url}`}
                 alt={product.name}
                 className="max-w-[90px] w-[89psx] h-sauto object-contain"
               /></Link>
@@ -35,8 +36,8 @@ const Cart = ({ closeCart }) => {
               <h3 className="font-[300] text-[18px] sm:text-[20px] pr-3 sm:pr-4 pt-0 mt-0">{product.name}</h3>
               <p className="font-[400] text-[#00000099] text-bases">
                 <span className="text-[#000000]">{product.quantity} x </span>
-                ₦{product?.current_price[0]?.NGN[0]
-                }
+                {/* ${product?.current_price[0]?.NGN[0]} */}
+                ${product.price}
               </p>
               <div className="bg-[#e5e5e5] flex gap-2 p-1 w-[6rem] justify-between">
                 <button
@@ -97,7 +98,7 @@ const Cart = ({ closeCart }) => {
         <hr className={`
           mt-6 ${cartItems.length === 0 ? "hidden" : "block"}`} />
         <h3 className={`text-center my-10 font-[500] ${cartItems.length === 0 ? "hidden" : "block"}`}>
-          < span className="font-[300] mr-1">Subtotal: </span>₦{getTotal()}
+          < span className="font-[300] mr-1">Subtotal: </span>${getTotal()}
         </h3>{" "}
         <div className={`flex flex-col items-centers gap-3 ${cartItems.length === 0 ? "hidden" : ""}`}>
           <div className="w-full" onClick={clearCart}>

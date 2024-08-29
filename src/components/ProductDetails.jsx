@@ -7,39 +7,40 @@ import love from "/assets/icons/love.svg";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { useCart } from "../context/CartContext";
+import productData from "../data/products.json";
 
 const ProductDetails = () => {
   const { id } = useParams();
   const { addToCart, removeFromCart, cartItems } = useCart();
-  const [product, setProduct] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
+  const [product, setProduct] = useState(productData);
+  const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
 
-  useEffect(() => {
-    const fetchProduct = async () => {
-      setIsLoading(true);
-      setIsError(false);
-      try {
-        const API_KEY = import.meta.env.VITE_API_KEY;
-        const APP_ID = import.meta.env.VITE_APP_ID;
-        const ORG_ID = import.meta.env.VITE_ORG_ID;
-        const response = await axios.get(`https://timbu-get-single-product.reavdev.workers.dev/${id}`, {
-          params: {
-            organization_id: ORG_ID,
-            Appid: APP_ID,
-            Apikey: API_KEY,
-          },
-        });
-        setProduct(response.data);
-      } catch (error) {
-        setIsError(true);
-      } finally {
-        setIsLoading(false);
-      }
-    };
+  // useEffect(() => {
+  //   const fetchProduct = async () => {
+  //     setIsLoading(true);
+  //     setIsError(false);
+  //     try {
+  //       const API_KEY = import.meta.env.VITE_API_KEY;
+  //       const APP_ID = import.meta.env.VITE_APP_ID;
+  //       const ORG_ID = import.meta.env.VITE_ORG_ID;
+  //       const response = await axios.get(`https://timbu-get-single-product.reavdev.workers.dev/${id}`, {
+  //         params: {
+  //           organization_id: ORG_ID,
+  //           Appid: APP_ID,
+  //           Apikey: API_KEY,
+  //         },
+  //       });
+  //       setProduct(response.data);
+  //     } catch (error) {
+  //       setIsError(true);
+  //     } finally {
+  //       setIsLoading(false);
+  //     }
+  //   };
 
-    fetchProduct();
-  }, [id]);
+  //   fetchProduct();
+  // }, [id]);
 
   if (isLoading) return <div>Loading...</div>;
   if (isError) return <div>Error fetching product</div>;
@@ -50,14 +51,15 @@ const ProductDetails = () => {
     <main className="bg-white rounded-lg w-full flex gap-10 sm:gap-20 p-10 flex-col md:flex-row">
       <div className="flex justify-center  w-full md:w-1/2 items-center p-0">
         <img
-          src={`https://api.timbu.cloud/images/${product.photos[0].url}`}
+          src={product.imageUrl}
+          // src={`https://api.timbu.cloud/images/${product.photos[0].url}`}
           alt={product.name}
           className="max-w-[435px] h-auto"
         />
       </div>
       <div className="gap-5 sm:gap-8 flex-col flex">
         <h2 className="font-[275] text-[64px] text-[rgba(0,_0,_0,_0.3)]">
-          ₦{product?.current_price}
+          ${product?.price}
         </h2>
         <span className="flex gap-3 items-center">
           <img src={love} alt="love icon" className="cursor-pointer" />{" "}

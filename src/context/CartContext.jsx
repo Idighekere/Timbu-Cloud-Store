@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { createContext, useState, useContext, useEffect } from "react";
 import productData from "../data/products.json";
 
@@ -71,7 +72,8 @@ export const CartProvider = ({ children }) => {
 
     const getTotal = () => {
 
-        return cartItems.reduce((total, item) => total + item.quantity * item?.current_price[0]?.NGN[0], 0);
+        // return cartItems.reduce((total, item) => total + item.quantity * item?.current_price[0]?.NGN[0], 0);
+        return cartItems.reduce((total, item) => total + item.quantity * item.price, 0);
     }
 
     const [product, setProduct] = useState(productData);

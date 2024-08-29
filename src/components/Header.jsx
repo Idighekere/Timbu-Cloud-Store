@@ -20,7 +20,7 @@ const Header = () => {
     setIsMenuOpen((prev) => !prev);
   };
   return (
-    <nav className="bg-white h-15 w-screens flex justify-between items-center px-10 py-14 sm:p-16 sticky top-0 z-50">
+    <nav className="bg-white h-7 w-screens flex justify-between items-center px-10 py-9 sm:p-16 sticky top-0 z-50">
       <div className="z-50">
         <a href="/">
           <img src={logo} alt="logo" />

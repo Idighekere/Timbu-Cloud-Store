@@ -12,52 +12,51 @@ import axios from "axios";
 import { useCart } from "../context/CartContext";
 
 
-const fetchProducts = async (page) => {
-  const API_KEY = import.meta.env.VITE_API_KEY
-  const APP_ID = import.meta.env.VITE_APP_ID
-  const ORG_ID = import.meta.env.VITE_ORG_ID
-  const response = await axios.get('https://timbu-get-all-products.reavdev.workers.dev/', {
-    params: {
-      organization_id: ORG_ID,
-      reverse_sort: false,
-      page: page,
-      size: 8,
-      Appid: APP_ID,
-      Apikey: API_KEY,
-      //currency_code: CAD
-    },
-  });
-  return response.data;
-};
+// const fetchProducts = async (page) => {
+//   const API_KEY = import.meta.env.VITE_API_KEY
+//   const APP_ID = import.meta.env.VITE_APP_ID
+//   const ORG_ID = import.meta.env.VITE_ORG_ID
+//   const response = await axios.get('api/product/', {
+//     params: {
+//       organization_id: ORG_ID,
+//       reverse_sort: false,
+//       page: page,
+//       size: 8,
+//       Appid: APP_ID,
+//       Apikey: API_KEY,
+//       //currency_code: CAD
+//     },
+//   });
+//   return response.data;
+// };
 
-// //console.log(response.data)
 const Shop = () => {
 
   const [categoryAll, setCategoryAll] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState("all");
-  const [products, setProducts] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const [products, setProducts] = useState(productData);
+  const [isLoading, setIsLoading] = useState(false);
   const [isEmpty, setIsEmpty] = useState(false);
   const [isError, setIsError] = useState(false);
   const [page, setPage] = useState(1);
 
-  useEffect(() => {
-    const getProducts = async () => {
-      setIsLoading(true);
-      setIsError(false);
-      try {
-        const data = await fetchProducts(page);
-        setProducts(data.items);
-        setIsEmpty(data.total === 0);
-      } catch (error) {
-        setIsError(true);
-      } finally {
-        setIsLoading(false);
-      }
-    };
+  // useEffect(() => {
+  //   const getProducts = async () => {
+  //     setIsLoading(true);
+  //     setIsError(false);
+  //     try {
+  //       const data = await fetchProducts(page);
+  //       // setProducts(data.items);
+  //       setIsEmpty(data.total === 0);
+  //     } catch (error) {
+  //       setIsError(true);
+  //     } finally {
+  //       setIsLoading(false);
+  //     }
+  //   };
 
-    getProducts();
-  }, [page]);
+  //   getProducts();
+  // }, [page]);
 
   // if (isLoading) return <div>loading...</div>;
   if (isError) return <div><div className="bg-primary">
