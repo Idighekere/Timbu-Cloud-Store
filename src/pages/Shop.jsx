@@ -16,7 +16,7 @@ const fetchProducts = async (page) => {
   const API_KEY = import.meta.env.VITE_API_KEY
   const APP_ID = import.meta.env.VITE_APP_ID
   const ORG_ID = import.meta.env.VITE_ORG_ID
-  const response = await axios.get('/api', {
+  const response = await axios.get('/api/', {
     params: {
       organization_id: ORG_ID,
       reverse_sort: false,
