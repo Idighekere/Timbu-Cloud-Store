@@ -12,24 +12,25 @@ import axios from "axios";
 import { useCart } from "../context/CartContext";
 
 
-// const fetchProducts = async (page) => {
-//   const API_KEY = import.meta.env.VITE_API_KEY
-//   const APP_ID = import.meta.env.VITE_APP_ID
-//   const ORG_ID = import.meta.env.VITE_ORG_ID
-//   const response = await axios.get('api/product/', {
-//     params: {
-//       organization_id: ORG_ID,
-//       reverse_sort: false,
-//       page: page,
-//       size: 8,
-//       Appid: APP_ID,
-//       Apikey: API_KEY,
-//       //currency_code: CAD
-//     },
-//   });
-//   return response.data;
-// };
+const fetchProducts = async (page) => {
+  const API_KEY = import.meta.env.VITE_API_KEY
+  const APP_ID = import.meta.env.VITE_APP_ID
+  const ORG_ID = import.meta.env.VITE_ORG_ID
+  const response = await axios.get('/api/', {
+    params: {
+      organization_id: ORG_ID,
+      reverse_sort: false,
+      page: page,
+      size: 8,
+      Appid: APP_ID,
+      Apikey: API_KEY,
+      //currency_code: CAD
+    },
+  });
+  return response.data;
+};
 
+// //console.log(response.data)
 const Shop = () => {
 
   const [categoryAll, setCategoryAll] = useState(false);

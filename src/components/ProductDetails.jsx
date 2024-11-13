@@ -12,9 +12,10 @@ import productData from "../data/products.json";
 const ProductDetails = () => {
   const { id } = useParams();
   const { addToCart, removeFromCart, cartItems } = useCart();
-  const [product, setProduct] = useState(productData);
+  //const [product, setProduct] = useState(productData);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
+  const product = productData.find(p=>p.id==id)
 
   // useEffect(() => {
   //   const fetchProduct = async () => {
@@ -42,18 +43,17 @@ const ProductDetails = () => {
   //   fetchProduct();
   // }, [id]);
 
-  if (isLoading) return <div>Loading...</div>;
-  if (isError) return <div>Error fetching product</div>;
-  if (!product) return <div className="text-center">Product not found</div>;
-
-  //console.log(product)
+  // if (isLoading) return <div>Loading...</div>;
+  // if (isError) return <div>Error fetching product</div>;
+  // if (!product) return <div className="text-center">Product not found</div>;
+  console.log(product)
   return (
     <main className="bg-white rounded-lg w-full flex gap-10 sm:gap-20 p-10 flex-col md:flex-row">
       <div className="flex justify-center  w-full md:w-1/2 items-center p-0">
         <img
-          src={product.imageUrl}
+          src={product?.imageUrl}
           // src={`https://api.timbu.cloud/images/${product.photos[0].url}`}
-          alt={product.name}
+          alt={product?.name}
           className="max-w-[435px] h-auto"
         />
       </div>
@@ -64,7 +64,7 @@ const ProductDetails = () => {
         <span className="flex gap-3 items-center">
           <img src={love} alt="love icon" className="cursor-pointer" />{" "}
           <img src={stroke} alt="divider" />
-          <p className="uppercase text-[14px] font-[400]">{product.name}</p>
+          <p className="uppercase text-[14px] font-[400]">{product?.name}</p>
         </span>
         <span>
           <p>
@@ -102,4 +102,4 @@ const ProductDetails = () => {
   );
 };
 
-export default ProductDetails   
+export default ProductDetails
