@@ -13,12 +13,12 @@ import Product from "./pages/Product";
 
 function App() {
   const router = createBrowserRouter([
+    // {
+    //   path: "/",
+    //   element: <Home />,
+    // },
     {
       path: "/",
-      element: <Home />,
-    },
-    {
-      path: "/shop",
       element: <Shop />,
       // children: [
       //   {

@@ -35,12 +35,13 @@ const Shop = () => {
 
   const [categoryAll, setCategoryAll] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState("all");
-  const [products, setProducts] = useState(productData);
+  //const [products, setProducts] = useState(productData);
   const [isLoading, setIsLoading] = useState(false);
   const [isEmpty, setIsEmpty] = useState(false);
   const [isError, setIsError] = useState(false);
   const [page, setPage] = useState(1);
 
+  const {product:products} = useCart()
   // useEffect(() => {
   //   const getProducts = async () => {
   //     setIsLoading(true);
@@ -104,7 +105,7 @@ const Shop = () => {
   const filteredProducts =
     selectedCategory === "all"
       ? products
-      : products.filter((p) => p.categories[0].name === selectedCategory);
+      : products?.filter((p) => p?.category == selectedCategory);
   const toggleCategory = () => {
     setCategoryAll((prev) => !prev);
   };
@@ -119,7 +120,7 @@ const Shop = () => {
             <Link to="/">Home</Link> / Shop
           </p>
 
-          <div className="text-base flex gap-4 text-center justify-center font-[500] text-[#00000066] mt-10 mb-20  items-center  cursor-pointer relative">
+          <div className="text-base flex gap-4 text-center justify-center font-[500] text-[#00000066] mt-10 mb-10  items-center  cursor-pointer relative">
             <button
               className={` cursor - pointer ${selectedCategory === "all" ? "text-black" : ""
                 } `}
@@ -135,8 +136,8 @@ const Shop = () => {
               ACCESSORIES
             </button>
             <button
-              onClick={() => handleCategoryClick("males")}
-              className={` cursor - pointer ${selectedCategory === "males" ? "text-black" : ""
+              onClick={() => handleCategoryClick("male")}
+              className={` cursor - pointer ${selectedCategory === "male" ? "text-black" : ""
                 } `}
             >
               MALE
@@ -145,8 +146,8 @@ const Shop = () => {
               <>
                 {" "}
                 <button
-                  onClick={() => handleCategoryClick("females")}
-                  className={` cursor - pointer ${selectedCategory === "females" ? "text-black" : ""
+                  onClick={() => handleCategoryClick("female")}
+                  className={` cursor - pointer ${selectedCategory === "female" ? "text-black" : ""
                     } `}
                 >
                   FEMALE
@@ -198,14 +199,14 @@ const Shop = () => {
             return <ProductCard product={product} key={product.id} />;
           })}
         </div>)}
-        <div className="flex gap-3 items-center justify-center mt-10">
+        {/* <div className="flex gap-3 items-center justify-center mt-10">
           <span onClick={() => setPage(page > 1 ? page - 1 : 1)}>
             <img src={leftArrow} alt="left arrow" />
           </span>
           <span onClick={() => setPage(page + 1)}>
             <img src={rightArrow} alt="left arrow" />
           </span>
-        </div>
+        </div> */}
       </main>
       <Footer />
     </div>

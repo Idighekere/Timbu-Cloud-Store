@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import React, { createContext, useState, useContext, useEffect } from "react";
 import productData from "../data/products.json";
@@ -82,5 +83,3 @@ export const CartProvider = ({ children }) => {
         <CartContext.Provider value={{ isCartOpen, openCart, closeCart, addToCart, clearCart, removeItem, cartItems, getTotal, product, removeFromCart }}> {children}</CartContext.Provider >
     )
 }
-
-
